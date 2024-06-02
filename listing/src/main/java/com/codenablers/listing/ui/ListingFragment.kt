@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -36,10 +37,12 @@ class ListingFragment : Fragment() {
                             // Show loading indicator
                             loadingProgressBar.visibility = View.VISIBLE
                             listingRecyclerView.visibility = View.INVISIBLE
+                            textViewEmptyData.visibility = View.INVISIBLE
                         }
 
                         is Result.Success -> {
                             loadingProgressBar.visibility = View.INVISIBLE
+                            textViewEmptyData.visibility = View.INVISIBLE
                             listingRecyclerView.visibility = View.VISIBLE
                             val universities = result.data
                             if (universities.isNotEmpty()) {
@@ -61,7 +64,14 @@ class ListingFragment : Fragment() {
                         }
 
                         is Result.Error -> {
-
+                            textViewEmptyData.visibility = View.VISIBLE
+                            loadingProgressBar.visibility = View.INVISIBLE
+                            listingRecyclerView.visibility = View.INVISIBLE
+                            Toast.makeText(
+                                requireContext(),
+                                result.errorMessage,
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
 
