@@ -18,3 +18,10 @@ This Android application demonstrates a modular architecture with MVVM (Model-Vi
  - Hilt 
  - Unit Testing with JUnit
  - XML for UI Design
+
+<br></br>
+<img align="left" width="300" src="https://github.com/waheedkhan-dev/EduLocator/assets/55230825/fa79782a-dcf9-46a9-b090-ac362ef5b811" alt="screen 1" />
+<img align="left" width="300" src="https://github.com/waheedkhan-dev/EduLocator/assets/55230825/875faeaf-544d-4f3d-a5dd-86799de38ed7" alt="screen 2" />
+<br></br>
+
+
