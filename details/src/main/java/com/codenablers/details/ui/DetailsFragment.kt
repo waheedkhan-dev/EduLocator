@@ -1,6 +1,7 @@
 package com.codenablers.details.ui
 
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,8 +39,8 @@ class DetailsFragment : Fragment() {
                         textViewStateName.text = university.stateProvince
                         textViewCountryName.text = university.country
                         textViewCountryCode.text = university.alphaTwoCode
+                            textViewWebPage.movementMethod = LinkMovementMethod.getInstance()
                         textViewWebPage.text = university.webPages.first()
-
                     }
                 }
             }
