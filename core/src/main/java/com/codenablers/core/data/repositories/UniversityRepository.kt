@@ -5,6 +5,6 @@ import com.codenablers.core.domain.Result
 import kotlinx.coroutines.flow.Flow
 
 interface UniversityRepository {
-    suspend fun getUniversities(country: String): Flow<Result<List<UniversitiesResponse.University>>>
+    suspend fun getUniversities(): Flow<Result<List<UniversitiesResponse.University>>>
     suspend fun getUniversityById(id : Int): Flow<UniversitiesResponse.University>
 }

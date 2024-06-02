@@ -10,5 +10,5 @@ class ListingViewModel @Inject constructor(private val universityRepositoryImpl:
     ViewModel() {
 
     suspend fun getUniversity() =
-        universityRepositoryImpl.getUniversities("United%20Arab%20Emirate")
+        universityRepositoryImpl.getUniversities()
 }

@@ -15,7 +15,7 @@ class UniversityRepositoryImpl @Inject constructor(
     private val universitiesDao: UniversitiesDao
 ) :
     UniversityRepository {
-    override suspend fun getUniversities(country: String): Flow<Result<List<UniversitiesResponse.University>>> =
+    override suspend fun getUniversities(): Flow<Result<List<UniversitiesResponse.University>>> =
         flow {
             val universities = universitiesDao.getUniversities()
             // Emit the loading state if there is no record in database
