@@ -1,5 +1,6 @@
 package com.codenablers.core.di
 
+import com.codenablers.core.BuildConfig
 import com.codenablers.core.data.datasource.remote.ApiURL
 import com.codenablers.core.data.datasource.remote.EduApi
 import dagger.Module
@@ -43,10 +44,9 @@ object NetworkModule {
     fun provideOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor,
     ) = OkHttpClient.Builder().apply {
-        addInterceptor(httpLoggingInterceptor)
-      /* *//* if (BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG) {
             addInterceptor(httpLoggingInterceptor)
-        }*/
+        }
         callTimeout(2, TimeUnit.MINUTES)
         connectTimeout(2, TimeUnit.MINUTES)
         readTimeout(2, TimeUnit.MINUTES)

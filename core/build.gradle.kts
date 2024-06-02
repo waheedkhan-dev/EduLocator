@@ -45,6 +45,10 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -70,4 +74,8 @@ dependencies {
     api(libs.converter.gson)
     api(libs.logging.interceptor)
     api(libs.okhttps)
+
+    //Timber for Logging
+    implementation(libs.timber)
+
 }

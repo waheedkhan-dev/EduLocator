@@ -60,13 +60,14 @@ class ListingFragment : Fragment() {
                                     )
                                 recyclerView.adapter = listingAdapter
                                 listingAdapter.saveData(universities)
+                            }else{
+                                textViewEmptyData.visibility = View.VISIBLE
+                                loadingProgressBar.visibility = View.INVISIBLE
+                                listingRecyclerView.visibility = View.INVISIBLE
                             }
                         }
 
                         is Result.Error -> {
-                            textViewEmptyData.visibility = View.VISIBLE
-                            loadingProgressBar.visibility = View.INVISIBLE
-                            listingRecyclerView.visibility = View.INVISIBLE
                             Toast.makeText(
                                 requireContext(),
                                 result.errorMessage,
